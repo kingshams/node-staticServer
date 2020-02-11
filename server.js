@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port= process.env.PORT || 3000;
+
 let app = express();
 
 
@@ -49,6 +51,6 @@ app.get('/bad', (req, res)=>{
     res.send(`<h3>error: bad gateway!!</h3>`);
 })
 
-app.listen(3000, ()=>{
-    console.log('server is up on port 3000')
+app.listen(port, ()=>{
+    console.log(`server is up on port ${port}`)
 });
